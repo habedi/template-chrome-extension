@@ -24,7 +24,7 @@
     "web-extension",
     "browser-extension"
   ],
-  "author": "Hamed Abedi",
+  "author": "Hassan Abedi",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/habedi/template-chrome-extension/issues"
