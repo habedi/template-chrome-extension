@@ -1,17 +1,18 @@
-## Template Chrome Extension
-
 <div align="center">
   <picture>
-    <img alt="Template Chrome Extension Logo" src="logo.svg" height="20%" width="20%">
+    <img alt="Template Chrome Extension Logo" src="logo.svg" height="25%" width="25%">
   </picture>
-</div>
 <br>
+
+<h2>Template Chrome Extension</h2>
 
 [![Tests](https://img.shields.io/github/actions/workflow/status/habedi/template-chrome-extension/ci.yml?label=ci&style=flat&labelColor=282c34&logo=github)](https://github.com/habedi/template-chrome-extension/actions/workflows/ci.yml)
 [![Code Coverage](https://img.shields.io/codecov/c/github/habedi/template-chrome-extension?label=coverage&style=flat&labelColor=282c34&logo=codecov)](https://codecov.io/gh/habedi/template-chrome-extension)
 [![CodeFactor](https://img.shields.io/codefactor/grade/github/habedi/template-chrome-extension?label=code%20quality&style=flat&labelColor=282c34&logo=codefactor)](https://www.codefactor.io/repository/github/habedi/template-chrome-extension)
 [![Release](https://img.shields.io/github/release/habedi/template-chrome-extension.svg?label=release&style=flat&labelColor=282c34&logo=github)](https://github.com/habedi/template-chrome-extension/releases/latest)
 [![License](https://img.shields.io/badge/license-MIT-007ec6?style=flat&labelColor=282c34&logo=open-source-initiative)](https://opensource.org/licenses/MIT)
+
+</div>
 
 ---
 
@@ -28,14 +29,25 @@ You can load this template in your browser to see it work.
 1. **Get the Code**
     * Clone this repository or download it as a ZIP file.
 
-2. **Load the Extension in Chrome**
+2. **Install and Build**
+    * Install dependencies and compile TypeScript to JavaScript:
+
+      ```bash
+      make install-deps
+      make build
+      ```
+
+3. **Load the Extension in Chrome**
     * Open the Google Chrome (or Chromium) browser.
-    * Go to the extension page. You can type `chrome://extensions` in the address bar.
-    * Enable Developer mode. (It's a toggle switch is in the top-right corner.)
-    * Click the Load unpacked button.
-    * In the file selection dialog, and choose the `src` folder from this project.
+    * Go to the extensions page: `chrome://extensions`.
+    * Enable Developer mode (toggle in the top-right corner).
+    * Click the "Load unpacked" button.
+    * In the file selection dialog, choose the `dist` folder from this project.
 
 The extension icon will now appear in your Chrome toolbar.
+
+> [!NOTE]
+> The main development dependencies of the project are GNU Make and `npm` that need to be installed.
 
 ---
 
@@ -43,8 +55,13 @@ The extension icon will now appear in your Chrome toolbar.
 
 * Edit `src/manifest.json`: change the `name` and `description` to match your project.
 * Change the icons: put your own `.png` files in the `src/icons/` folder.
-* Build your popup: modify `src/popup/popup.html` and `src/popup/popup.js` to create your user interface.
-* Add the logic: write your extension's background logic in `src/background.js`.
+* Build your popup: modify `src/popup/popup.html` and `src/popup/popup.ts` to create your user interface.
+* Add the logic: write your extension's background logic in `src/background.ts`.
+* After making changes, rebuild:
+
+  ```bash
+  make build
+  ```
 
 ---
 

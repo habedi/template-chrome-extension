@@ -1,6 +1,6 @@
 // This function contains the core logic and is exported for testing.
-export function initializePopup() {
-    const myButton = document.getElementById("myButton");
+export function initializePopup(): void {
+    const myButton = document.getElementById("myButton") as HTMLButtonElement | null;
     if (myButton) {
         myButton.addEventListener("click", () => {
             alert("Button was clicked!");
