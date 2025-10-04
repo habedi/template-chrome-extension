@@ -1,0 +1,60 @@
+name: Lint, Test, and Package
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+  push:
+    tags:
+      - 'v*'
+
+
+# This cancels older, in-progress runs on the same pull request.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  lint-test-package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Set up Node.js with Cache
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm' # Use built-in caching for npm dependencies.
+        continue-on-error: true # This step fails if `package-lock.json` is not present.
+
+      - name: Install Dependencies
+        run: make install-deps
+
+      - name: Run Linter Checks
+        run: make lint
+
+      - name: Run Tests (with Coverage)
+        run: make test
+
+      - name: Upload Coverage Reports to Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+
+      - name: Package Extension
+        run: make release
+
+      - name: Upload Extension Package
+        if: success() && github.event_name != 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: extension-package
+          path: extension.zip
+          retention-days: 1

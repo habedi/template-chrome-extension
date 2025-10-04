@@ -1,7 +1,19 @@
 ## Template Chrome Extension
 
-[![CI](https://img.shields.io/github/actions/workflow/status/habedi/template-chrome-extension/lint_and_package.yml?branch=main)](https://github.com/habedi/template-chrome-extension/actions)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+<div align="center">
+  <picture>
+    <img alt="Template Chrome Extension Logo" src="logo.svg" height="20%" width="20%">
+  </picture>
+</div>
+<br>
+
+[![Tests](https://img.shields.io/github/actions/workflow/status/habedi/template-chrome-extension/ci.yml?label=ci&style=flat&labelColor=282c34&logo=github)](https://github.com/habedi/template-chrome-extension/actions/workflows/ci.yml)
+[![Code Coverage](https://img.shields.io/codecov/c/github/habedi/template-chrome-extension?label=coverage&style=flat&labelColor=282c34&logo=codecov)](https://codecov.io/gh/habedi/template-chrome-extension)
+[![CodeFactor](https://img.shields.io/codefactor/grade/github/habedi/template-chrome-extension?label=code%20quality&style=flat&labelColor=282c34&logo=codefactor)](https://www.codefactor.io/repository/github/habedi/template-chrome-extension)
+[![Release](https://img.shields.io/github/release/habedi/template-chrome-extension.svg?label=release&style=flat&labelColor=282c34&logo=github)](https://github.com/habedi/template-chrome-extension/releases/latest)
+[![License](https://img.shields.io/badge/license-MIT-007ec6?style=flat&labelColor=282c34&logo=open-source-initiative)](https://opensource.org/licenses/MIT)
+
+---
 
 This repository is a template for creating a Google Chrome and Chromium extension.
 It uses the [Manifest V3](https://developer.chrome.com/docs/extensions/mv3/intro/) format.
@@ -36,6 +48,10 @@ The extension icon will now appear in your Chrome toolbar.
 
 ---
 
+### Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to make a contribution.
+
 ### License
 
-This project is licensed under the MIT License (see [LICENSE](LICENSE)).
+This project is licensed under the MIT License (see [LICENSE](LICENSE) or https://opensource.org/licenses/MIT)

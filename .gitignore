@@ -1,10 +1,23 @@
-# JavaScript specific
-node_modules/
+# ===================================================================
+# IDE, Editor & System Files
+# ===================================================================
+# IDEs and editors
+.idea/
+.vscode/
+*.iml
+*.swp
+*~
+*.bak
 
-# Python specific
-__pycache__/
-*.py[cod]
-*$py.class
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+
+# ===================================================================
+# Dependencies & Environments
+# ===================================================================
+# Language package managers
+node_modules/
 
 # Virtual environments
 .env/
@@ -12,75 +25,57 @@ env/
 .venv/
 venv/
 
-# Packaging and distribution files
-.Python
+
+# ===================================================================
+# Build, Test & Coverage Artifacts
+# ===================================================================
+# Build and packaging outputs
 build/
 dist/
-*.egg-info/
-*.egg
-MANIFEST
-
-# Dependency directories
-develop-eggs/
-downloads/
+out/
 eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
 wheels/
-.installed.cfg
+*.egg-info/
+*.snap
+snap/
+
+# Python bytecode and cache
+__pycache__/
+*.py[cod]
 
 # Test and coverage reports
-htmlcov/
-.tox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
+.cache/
+.coverage*
 .hypothesis/
 .pytest_cache/
+.tox/
+coverage/
+htmlcov/
 test-reports/
-test-report.xml
-test-results.xml
 
-# IDE specific files and directories
-.idea/
-*.iml
-.vscode/
 
-# Jupyter Notebook files
-.ipynb_checkpoints
-
-# Temporary files created by editors and the system and folders to ignore
-*.swp
-*~
-*.bak
-*.tmp
-temp/
-tmp/
-out/
-
-# Database files (SQLite, DuckDB, etc.)
-*.duckdb
+# ===================================================================
+# Data, Logs & Temporary Files
+# ===================================================================
+# Databases
 *.db
-*.wal
+*.duckdb
 *.sqlite
+*.wal
 
-# Dependency lock files (uncomment to ignore)
-poetry.lock
+# Temporary files and folders
+*.tmp
+tmp/
+temp/
+
+# ===================================================================
+# Lock Files (Optional)
+# ===================================================================
+# It is best practice to commit lock files for reproducible builds.
+# Uncomment a line below ONLY if you have a reason to ignore it.
 package-lock.json
-yang.lock
 
-# Miscellaneous files and directories to ignore
-# Add any additional file patterns a directory names that should be ignored down here
-stage/
-prime/
-*.snap
-test.csv
-snap/
+# Miscellaneous outputs
+*.zip
 *_output.txt
+test.csv
