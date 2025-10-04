@@ -2,8 +2,9 @@
 # # Configuration and Variables
 # ################################################################################
 SRC_DIR       := src
+DIST_DIR      := dist
 PACKAGE_NAME  := extension.zip
-JUNK_DIRS     := node_modules
+JUNK_DIRS     := node_modules $(DIST_DIR)
 
 SHELL         := /usr/bin/env bash
 .SHELLFLAGS   := -eu -o pipefail -c
@@ -36,13 +37,15 @@ format: ## Format code with Prettier
 	@echo "--> Formatting source files..."
 	@npm run format
 
-test: ## Run the tests.
+test: ## Run the tests
 	@echo "--> Running tests..."
 	@npm run test
 
-build: ## Package the extension into a zip file (excluding tests)
+build: ## Compile TypeScript, copy static assets, and package the extension into $(PACKAGE_NAME)
+	@echo "--> Building the extension into $(DIST_DIR)/ ..."
+	@npm run build
 	@echo "--> Packaging the extension into $(PACKAGE_NAME)..."
-	@zip -r $(PACKAGE_NAME) $(SRC_DIR) -x "*.test.js"
+	@cd $(DIST_DIR) && zip -r ../$(PACKAGE_NAME) .
 
 rebuild: clean build  ## Clean the project then build it again
 
