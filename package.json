@@ -1,0 +1,23 @@
+{
+  "name": "template-chrome-extension",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/habedi/template-chrome-extension.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/habedi/template-chrome-extension/issues"
+  },
+  "homepage": "https://github.com/habedi/template-chrome-extension#readme",
+  "devDependencies": {
+    "eslint": "^9.37.0"
+  }
+}
